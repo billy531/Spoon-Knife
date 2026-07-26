@@ -1,0 +1,15 @@
+name: NL Cancel Test
+on:
+  workflow_dispatch:
+    inputs:
+      note:
+        description: A free-text note
+        required: false
+jobs:
+  longsleep:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sleep so the run can be cancelled mid-flight
+        run: |
+          echo "starting long sleep for cancel test"
+          sleep 600
