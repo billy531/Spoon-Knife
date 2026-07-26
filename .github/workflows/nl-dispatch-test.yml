@@ -1,16 +1,12 @@
-name: NL Dispatch Test
+name: NL Cancel Test
 on:
   workflow_dispatch:
     inputs:
-      environment:
-        description: Target environment
-        required: false
-        default: staging
       note:
         description: A free-text note
         required: false
 jobs:
-  echo:
+  sleep:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "dispatched to ${{ github.event.inputs.environment }} — ${{ github.event.inputs.note }}"
+      - run: sleep 180
